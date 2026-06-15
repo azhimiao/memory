@@ -1,0 +1,50 @@
+version: "1.0"
+
+# Palace taxonomy — Discovery First
+wings:
+  - id: user
+    title: 用户
+    rooms: [identity, preferences, boundaries, health-notes, life-events]
+  - id: relationship
+    title: 关系
+    rooms: [milestones, rituals, nicknames, conflicts-repair, shared-plans]
+  - id: ai-persona
+    title: AI 形象
+    rooms: [character, voice-style, backstory, limits]
+  - id: sessions
+    title: 会话归档
+    rooms: [transcripts, summaries]
+
+core_files:
+  persona: memory/core/persona.yaml
+  user_model: memory/core/user-model.yaml
+  relationship: memory/core/relationship.yaml
+  working: memory/core/working.yaml
+
+paths:
+  episodes: memory/episodes/
+  reflections: memory/reflections/
+  archive: memory/archive/sessions/
+  diary: memory/diary/
+  inbox: memory/inbox/
+
+episode_schema:
+  required: [id, timestamp, wing, room, content, source]
+  optional: [importance, tags, invalidates, verbatim_ref, consent]
+
+importance_scale: [1, 10]  # Generative Agents style
+
+retrieval:
+  top_k: 8
+  weights:
+    recency: 0.35
+    importance: 0.25
+    relevance: 0.40
+
+consent:
+  default: ask_before_write
+  inbox_ttl_hours: 24
+
+integration:
+  relationship_profile: relationship/profile.yaml
+  couple_session: couple/session.yaml

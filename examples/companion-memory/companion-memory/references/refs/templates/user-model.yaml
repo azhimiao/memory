@@ -1,0 +1,11 @@
+identity:
+  name: ""
+  pronouns: ""
+  timezone: ""
+preferences: {}
+boundaries:
+  hard_limits: []
+  soft_limits: []
+attachment_cues: ""
+facts: []
+updated_at: ""

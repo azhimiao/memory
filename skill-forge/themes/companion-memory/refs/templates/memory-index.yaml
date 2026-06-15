@@ -1,0 +1,7 @@
+version: "1.0"
+updated_at: ""
+wings:
+  user: { rooms: [identity, preferences, boundaries] }
+  relationship: { rooms: [milestones, rituals, nicknames] }
+  ai-persona: { rooms: [character, voice-style] }
+episode_count: 0

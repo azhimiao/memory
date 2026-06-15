@@ -1,0 +1,21 @@
+tests:
+  - id: T1
+    description: agent CLI protocol
+    assert:
+      contains: ["agent-protocol.md", "memory_cli.py", "wakeup", "wind-down", "bootstrap"]
+      sections: ["Quick Start", "Workflow", "Failure Modes"]
+
+  - id: T2
+    description: retrieval CLI
+    assert:
+      contains: ["memory_cli.py search", "recency", "importance", "relationship_brief", "MemGPT"]
+
+  - id: T3
+    description: consent inbox pipeline
+    assert:
+      contains: ["inbox-promote", "consent", "invalidate", "no-evidence", "abstain"]
+
+  - id: T4
+    description: agent store paths
+    assert:
+      contains: ["memory/episodes", "core/persona", "validate", "memory_lib"]
